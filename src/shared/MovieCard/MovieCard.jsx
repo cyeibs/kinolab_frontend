@@ -25,11 +25,11 @@ function extractYearFromDate(dateString) {
   return year.toString(); // convert year number to string if needed
 }
 
-const MovieCard = ({ item, locale }) => {
+const MovieCard = ({ basePath, item, locale }) => {
   return (
     <NavLink
       className={`${styles.movieCard} ${styles.poster}`}
-      to={`/p/${item.id}`}
+      to={`/${basePath}/item/${item.id}`}
     >
       <div className={styles.wrapper}>
         <div className={styles.imageBlock}>
@@ -75,7 +75,7 @@ const MovieCard = ({ item, locale }) => {
         </div>
         <div className={styles.name}>
           <Typography variant="t1" sx={{ fontWeight: 600 }}>
-            {item.title}
+            {item.title || item.name}
           </Typography>
         </div>
         <div className={styles.caption}>

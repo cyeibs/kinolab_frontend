@@ -1,6 +1,7 @@
 export const getItemInfo = async ({
   variable = "823464",
   localization = "ru-RU",
+  basePath = "movie",
 }) => {
   const options = {
     method: "GET",
@@ -11,7 +12,7 @@ export const getItemInfo = async ({
   };
 
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${variable}?language=${localization}`,
+    `https://api.themoviedb.org/3/${basePath}/${variable}?language=${localization}`,
     options
   );
   const json = await response.json();

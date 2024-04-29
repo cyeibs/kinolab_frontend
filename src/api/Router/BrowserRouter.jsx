@@ -42,7 +42,11 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "p/:movieid",
+        path: "movie/item/:movieid",
+        element: <ItemPage />,
+      },
+      {
+        path: "tv/item/:movieid",
         element: <ItemPage />,
       },
     ],

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import useCustomQuery from "../../shared/useCustomQuery/useCustomQuery";
 import { getItemInfo } from "./api/getItemInfo";
 import styles from "./styles/ItemPage.module.css";
@@ -9,11 +9,16 @@ import CardInfo from "./components/CardInfo";
 
 function ItemPage() {
   const { movieid } = useParams();
+
+  const location = useLocation();
+  const basePath = location.pathname.split("/")[1];
+
   const locale = useSelector((state) => state.localization.locale);
   const { data, isPending, isFetching, isError, refetch } = useCustomQuery({
     queryFunction: getItemInfo,
     variable: movieid,
     localization: locale,
+    basePath: basePath,
   });
 
   return (

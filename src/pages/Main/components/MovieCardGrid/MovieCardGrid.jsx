@@ -85,7 +85,7 @@ function MovieCardGrid() {
               lg={2}
               key={crypto.randomUUID()}
             >
-              <MovieCard item={item} locale={locale} />
+              <MovieCard basePath={basePath} item={item} locale={locale} />
             </Grid>
           ))}
         </Grid>
