@@ -43,7 +43,7 @@ function SwiperComponent() {
             prevEl: ".swiper-button-prev",
           }}
           modules={[Navigation]}
-          className="mySwiper"
+          className="swiper"
         >
           <SwiperSlide key={crypto.randomUUID()}>
             <NavLink
