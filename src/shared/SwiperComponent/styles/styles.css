@@ -1,0 +1,191 @@
+.main {
+  position: relative;
+  margin-bottom: 30px;
+
+  @media (min-width: 0px) {
+    padding: 0 12px;
+  }
+  @media (min-width: 769px) {
+    padding: 0 32px;
+  }
+  @media (min-width: 1280px) {
+    padding: 0 64px;
+  }
+}
+
+.swiper {
+  position: relative;
+  display: flex;
+  width: auto;
+  max-width: unset;
+  flex-wrap: nowrap;
+  overflow: initial !important;
+  margin: 0 -32px !important;
+  padding: 0 32px !important;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  position: relative;
+  transition-property: transform;
+  height: auto !important;
+  transform: translateZ(0);
+  width: fit-content !important;
+  margin-right: 15px !important;
+}
+
+.swiper-slide:last-child {
+  margin-right: 0px !important;
+}
+
+.swiperButtonActive:after,
+.swiperButtonInactive:after {
+  background: linear-gradient(90deg, #48078f, #004fd6);
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.swiperButtonActive {
+  height: 53px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(90deg, #48078f, #004fd6);
+  transition: 0.5s ease-out;
+  text-decoration: none;
+}
+
+.swiperButtonInactive {
+  position: relative;
+  height: 53px;
+  padding: 16px 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  color: #bababa;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0.1),
+    hsla(0, 0%, 100%, 0.13) 50%,
+    hsla(0, 0%, 100%, 0.1)
+  );
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.swiperButtonInactive span {
+  position: relative;
+  z-index: 2;
+}
+
+.swiperButtonInactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #48078f, #004fd6);
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 0.5s ease-out;
+  z-index: 1;
+}
+
+.swiperButtonInactive:hover {
+  color: white;
+}
+
+.swiperButtonInactive:hover::before {
+  opacity: 1;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear;
+  flex: 1 0 100% !important;
+  width: auto !important;
+}
+
+.swiper .swiper-button-next.swiper-button-prev,
+.swiper .swiper-button-prev.swiper-button-prev {
+  left: 8px;
+}
+.swiper .swiper-button-next.swiper-button-next,
+.swiper .swiper-button-prev.swiper-button-next {
+  right: 8px;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  width: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  height: 42px;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  opacity: 1;
+  display: none;
+}
+
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+  opacity: 1;
+}
+
+.swiper .swiper-button-next.swiper-button-disabled,
+.swiper .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+  display: none;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transition: opacity 0.3s ease-out;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper .swiper-button-next:before,
+.swiper .swiper-button-prev:before {
+  position: absolute;
+  height: 100%;
+  line-height: 0;
+  transform: scale(1);
+  padding: 0 4px;
+  z-index: -1;
+  inset: 0;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.03s;
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  transition: transform 0.15s ease-out;
+  background: rgba(9, 9, 12, 0.6);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.swiper .swiper-button-next:hover:before,
+.swiper .swiper-button-prev:hover:before {
+  transform: scale(1.1);
+}
+
+.swiper .swiper-button-next.swiper-button-next:before,
+.swiper .swiper-button-prev.swiper-button-next:before {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' style='fill: rgba(255, 255, 255, 1);transform: ;msFilter:;'><path d='M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z'></path></svg>");
+}
+
+.swiper .swiper-button-next.swiper-button-prev:before,
+.swiper .swiper-button-prev.swiper-button-prev:before {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' style='fill: rgba(255, 255, 255, 1);transform: ;msFilter:;'><path d='M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z'></path></svg>");
+}

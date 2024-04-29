@@ -1,0 +1,112 @@
+.movieCard {
+  height: 100%;
+  padding: 8px 0;
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 2s;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.movieCard:hover {
+  transform: scale(1.03);
+}
+
+.poster {
+  will-change: transform;
+  transition: 0.3s ease-out;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.imageBlock {
+  padding: 16px 16px 136%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+  background: hsla(0, 0%, 100%, 0.102);
+}
+
+.badgeWrapper {
+  display: flex;
+  gap: 8px;
+  will-change: transform;
+  transform-origin: top left;
+  transition: 0.3s ease-out;
+  z-index: 2;
+  position: relative;
+}
+
+.rating,
+.badge {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+}
+
+.rating:before {
+  content: "";
+  background: linear-gradient(90deg, #6a11cb, #2575fc 100%, #2575fc 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.badge:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  z-index: -1;
+  background: rgba(9, 9, 12, 0.6);
+}
+
+.badge,
+.badge:before,
+.rating,
+.rating:before {
+  padding: 6px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeWrapper .badge {
+  display: flex;
+}
+.name {
+  color: white;
+  transform-origin: top left;
+  transition: 0.3s ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caption {
+  transform-origin: top left;
+  transition: 0.3s ease-out;
+  line-height: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 2;
+}
